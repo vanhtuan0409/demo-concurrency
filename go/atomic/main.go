@@ -11,11 +11,11 @@ func main() {
 	useMutexLock := false
 
 	for i := 0; i < 20; i++ {
-		dataRaceTest(useMutexLock)
+		atomicTest(useMutexLock)
 	}
 }
 
-func dataRaceTest(useLock bool) {
+func atomicTest(useLock bool) {
 	x := 0
 	var wg sync.WaitGroup // Initialize WaitGroup
 	var lock *sync.Mutex  // Initialize mutext lock
